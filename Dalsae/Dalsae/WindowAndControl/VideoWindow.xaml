@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Dalsae"
+        xmlns:template="clr-namespace:Dalsae.Template"
+        xmlns:dalsae="clr-namespace:Dalsae"
         mc:Ignorable="d"
         Title="달새 동영상 플레이어" Height="678" Width="526" Closing="Window_Closing" PreviewKeyDown="Window_PreviewKeyDown" Activated="Window_Activated">
     <Window.Resources>
-        <local:TweetTemplateSelector x:Key="myTweetTemplateSelector"/>
-        <local:DataManager x:Key="myOption"/>
+        <template:TweetTemplateSelector x:Key="myTweetTemplateSelector"/>
+        <dalsae:DataManager x:Key="myOption"/>
         <!--<local:BoolConverter x:Key="boolConverter"/>-->
         <DataTemplate x:Key="tweetControl">
             <Grid HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Top"

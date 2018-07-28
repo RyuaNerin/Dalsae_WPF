@@ -1,34 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static Dalsae.TwitterWeb;
-using static Dalsae.DalsaeManager;
-using static Dalsae.DataManager;
-using Newtonsoft.Json;
-using System.Globalization;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Threading;
+using System.Globalization;
 using System.IO;
-using Dalsae.API;
+using System.Threading;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using Dalsae.Data;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
+using Dalsae.Twitter.Packets;
+using Newtonsoft.Json;
+using static Dalsae.DalsaeManager;
+using static Dalsae.DataManager;
+using static Dalsae.TwitterWeb;
 
 namespace Dalsae.WindowAndControl
 {
-	/// <summary>
-	/// FollowWindow.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class FollowWindow : Window
+    /// <summary>
+    /// FollowWindow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class FollowWindow : Window
 	{
 		private class UserList : ObservableCollection<UserFollow>	{ public UserList() : base() { } }
 		private UserFollow userMe;

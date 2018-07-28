@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Newtonsoft.Json;
 
 namespace Dalsae
 {
-	public partial class DalsaeManager
+    public partial class DalsaeManager
 	{
 		GitHubRelease patch = null;
 		public void CheckNewVersion()

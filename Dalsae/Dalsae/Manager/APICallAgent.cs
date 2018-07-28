@@ -2,21 +2,22 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using Dalsae.API;
 using Dalsae.Data;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
+using Dalsae.Twitter.Packets;
 using Dalsae.Web;
 using static Dalsae.Manager.ResponseAgent;
 using static Dalsae.TwitterWeb;
 
 namespace Dalsae.Manager
 {
-	public class APICallAgent
+    public class APICallAgent
 	{
 		private static APICallAgent _instence;
 		public static APICallAgent apiInstence { get { if (_instence == null) _instence = new APICallAgent(); return _instence; } }
@@ -156,7 +157,7 @@ namespace Dalsae.Manager
 		{
 			if(isRetweet)
 			{
-				PacketRetweet packet = new API.PacketRetweet(id);
+				PacketRetweet packet = new PacketRetweet(id);
 				RequestPacket<ClientTweet>(packet, responseInstence.Retweet);
 			}
 			else
@@ -263,7 +264,7 @@ namespace Dalsae.Manager
 
 		public void LoadSingleTweet(ClientTweet tweet, string tweetID)
 		{
-			PacketSingleTweet packet = new API.PacketSingleTweet(tweetID);
+			PacketSingleTweet packet = new PacketSingleTweet(tweetID);
 			if (tweet.uiProperty.parentTweet == null)
 				RequestSingleTweetPacket<ClientTweet>(packet, tweet.uiProperty, responseInstence.SingleTweet);
 			else

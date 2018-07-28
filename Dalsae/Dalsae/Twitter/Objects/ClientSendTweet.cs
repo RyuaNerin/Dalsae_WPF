@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Media.Imaging;
-using Dalsae.API;
+using Dalsae.Twitter.Packets;
 
-namespace Dalsae.Web
+namespace Dalsae.Twitter.Objects
 {
-	public class ClientSendTweet
+    public class ClientSendTweet
 	{
 		public PacketUpdate parameter { get; private set; }
 		public BitmapImage[] listBitmap { get; private set; }

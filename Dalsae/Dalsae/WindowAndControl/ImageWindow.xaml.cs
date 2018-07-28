@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static Dalsae.FileManager;
+using Dalsae.Data;
+using Dalsae.Twitter.Objects;
+using Dalsae.Twitter.Packets;
 using static Dalsae.DalsaeManager;
 using static Dalsae.DataManager;
+using static Dalsae.FileManager;
 using static Dalsae.TweetManager;
-using System.Net;
-using System.IO;
-using System.Diagnostics;
-using Dalsae.API;
-using Dalsae.Data;
 
 namespace Dalsae.WindowAndControl
 {
-	/// <summary>
-	/// ImageWindow.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class ImageWindow : Window
+    /// <summary>
+    /// ImageWindow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class ImageWindow : Window
 	{
 		//확대 중일 때 마우스 커서 바꾸기
 		//확대

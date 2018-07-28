@@ -1,32 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Windows.Interop;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.IO;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Dalsae.Template;
-using static Dalsae.FileManager;
+using System.Windows.Threading;
+using Dalsae.Twitter.Objects;
 using static Dalsae.DalsaeManager;
 using static Dalsae.DataManager;
-using static Dalsae.TweetManager;
-using System.Windows.Threading;
+using static Dalsae.FileManager;
 
 namespace Dalsae.WindowAndControl
 {
-	/// <summary>
-	/// VideoWindow.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class VideoWindow : Window
+    /// <summary>
+    /// VideoWindow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class VideoWindow : Window
 	{
 		/// <summary>
 		/// bitrate가 가장 높은 media index

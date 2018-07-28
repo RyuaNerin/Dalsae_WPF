@@ -1,40 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using static Dalsae.FileManager;
-using static Dalsae.DalsaeManager;
-using static Dalsae.TwitterWeb;
-using static Dalsae.DataManager;
-using static Dalsae.TweetManager;
-using System.IO;
+using System.Windows.Threading;
 using SharpRaven;
 using SharpRaven.Data;
-using System.Windows.Threading;
+using static Dalsae.DalsaeManager;
+using static Dalsae.DataManager;
+using static Dalsae.FileManager;
 
 namespace Dalsae
 {
-	/// <summary>
-	/// App.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class App : Application
+    /// <summary>
+    /// App.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class App : Application
 	{
 		public App()
 		{
 			this.Dispatcher.UnhandledException += Dispatcher_UnhandledException;
 			this.Dispatcher.UnhandledExceptionFilter += Dispatcher_UnhandledExceptionFilter;
-			System.AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-			System.Threading.Tasks.TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
-			if (File.Exists("Newtonsoft.Json.dll") == false)
-			{
-				MessageBox.Show("Newtonsoft.Json.dll 파일이 없습니다.\r\n공식 배포 페이지에서 다운로드라고 되어있는 항목에서\r\nDalsae_xxx.zip 파일을 받아 압축을 풀어주세요.", "오류", MessageBoxButton.OK, MessageBoxImage.Error);
-				System.Diagnostics.Process.Start("https://github.com/hanalen-/Dalsae_WPF/releases");
-				Application.Current.Shutdown();
-				return;
-			}
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
+
 			DataInstence.Init();
 			FileInstence.Init();//init
 			DalsaeInstence.Init();//init

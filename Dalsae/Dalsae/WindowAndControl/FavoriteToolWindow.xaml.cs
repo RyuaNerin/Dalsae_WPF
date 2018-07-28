@@ -1,31 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Dalsae.Twitter.Objects;
+using Dalsae.Twitter.Packets;
 using Newtonsoft.Json;
 using static Dalsae.FileManager;
-using static Dalsae.DalsaeManager;
 using static Dalsae.TwitterWeb;
-using static Dalsae.DataManager;
-using static Dalsae.TweetManager;
-using Dalsae.API;
 
 namespace Dalsae.WindowAndControl
 {
-	/// <summary>
-	/// FavoriteToolWindow.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class FavoriteToolWindow : Window
+    /// <summary>
+    /// FavoriteToolWindow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class FavoriteToolWindow : Window
 	{
 		private int countFav = 0;
 		private int index = -1;

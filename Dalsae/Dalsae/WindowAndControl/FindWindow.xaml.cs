@@ -1,29 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Concurrent;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static Dalsae.DataManager;
-using static Dalsae.DalsaeManager;
-using System.Collections.Concurrent;
 using Dalsae.Data;
+using Dalsae.Manager;
+using Dalsae.Twitter.Objects;
+using static Dalsae.DalsaeManager;
+using static Dalsae.DataManager;
 
 namespace Dalsae.WindowAndControl
 {
-	/// <summary>
-	/// FindWindow.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class FindWindow : Window
+    /// <summary>
+    /// FindWindow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class FindWindow : Window
 	{
-		private Dalsae.ListFindUser listFind { get; set; } = new ListFindUser();
+		private ListFindUser listFind { get; set; } = new ListFindUser();
 		public FindWindow(Window owner)
 		{
 			this.Owner = owner;

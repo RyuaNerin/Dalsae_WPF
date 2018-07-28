@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using Dalsae.API;
+using Dalsae.Twitter.Objects;
+using Dalsae.Twitter.Packets;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Dalsae.Web
 {
-	class UserStreaming
+    class UserStreaming
 	{
 		private static UserStreaming _instence;
 		public static UserStreaming usInstence { get { if (_instence == null) _instence = new UserStreaming(); return _instence; } }

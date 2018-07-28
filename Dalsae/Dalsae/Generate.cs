@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Interop;
 using System.Windows.Media;
-//using DWORD = System.UInt32;
+using Dalsae.Twitter.Objects;
 
 namespace Dalsae
 {
-	class Generate
+    class Generate
 	{
 		public static T FindElementByName<T>(FrameworkElement element, string sChildName) where T : FrameworkElement
 		{

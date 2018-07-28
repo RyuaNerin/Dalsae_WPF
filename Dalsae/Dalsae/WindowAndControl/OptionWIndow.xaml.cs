@@ -1,30 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Text;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.IO;
 using static Dalsae.DataManager;
 using static Dalsae.FileManager;
-using System.Drawing.Text;
-using System.Globalization;
 
 namespace Dalsae.WindowAndControl
 {
-	/// <summary>
-	/// OptionWIndow.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class OptionWIndow : Window
+    /// <summary>
+    /// OptionWIndow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class OptionWIndow : Window
 	{
-		private new System.Drawing.Font font = null;
 		private string[] arrHighlight;
 		private string[] arrMuteWord;
 		private string[] arrMuteClient;

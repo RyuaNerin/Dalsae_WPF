@@ -1,23 +1,21 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
-using static Dalsae.DataManager;
-using System.Windows.Media.Imaging;
+using System.IO;
 using System.Net;
-using System.ComponentModel;
+using System.Windows.Media.Imaging;
 using Dalsae.Data;
-using System.Collections.Concurrent;
+using Dalsae.Manager;
+using Dalsae.Twitter.Objects;
+using Newtonsoft.Json;
+using static Dalsae.DataManager;
 
 namespace Dalsae
 {
-	class FileManager
+    class FileManager
 	{
 		private static FileManager instence;
 

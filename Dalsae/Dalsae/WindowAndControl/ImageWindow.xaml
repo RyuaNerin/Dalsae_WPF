@@ -4,6 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dalsae"
+        xmlns:converter="clr-namespace:Dalsae.Converter"
+        xmlns:dalsae="clr-namespace:Dalsae"
+        xmlns:template="clr-namespace:Dalsae.Template"
         mc:Ignorable="d"
         Background="Gray"
         SizeChanged="imageWindow_SizeChanged"
@@ -11,11 +14,11 @@
         Closed="imageWindow_Closed"
         Title="ImageWindow" Height="700" Width="500" PreviewKeyDown="imageWindow_PreviewKeyDown" Closing="imageWindow_Closing" Loaded="imageWindow_Loaded" Activated="Window_Activated">
     <Window.Resources>
-        <local:TweetTemplateSelector x:Key="myTweetTemplateSelector"/>
-        <local:PropicConverter x:Key="propicConverter"/>
-        <local:FontColorConverter x:Key="fontColorConverter"/>
+        <template:TweetTemplateSelector x:Key="myTweetTemplateSelector"/>
+        <converter:PropicConverter x:Key="propicConverter"/>
+        <converter:FontColorConverter x:Key="fontColorConverter"/>
+        <converter:BoolConverter x:Key="boolConverter"/>
         <local:DataManager x:Key="myOption"/>
-        <local:BoolConverter x:Key="boolConverter"/>
         <ContextMenu x:Key="contextMenu"/>
         <Image x:Key="imageTemplate" Height="80" Margin="10" Grid.Row="2" Width="80" Stretch="None"/>
     </Window.Resources>

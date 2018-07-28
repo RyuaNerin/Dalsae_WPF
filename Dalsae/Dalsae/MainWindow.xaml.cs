@@ -1,33 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Newtonsoft.Json;
-using static Dalsae.FileManager;
-using static Dalsae.DalsaeManager;
-using static Dalsae.TwitterWeb;
-using static Dalsae.DataManager;
-using static Dalsae.TweetManager;
-using System.Text.RegularExpressions;
-using System.Collections.Specialized;
 using System.Windows.Threading;
-using Dalsae.WindowAndControl;
-using Dalsae.Template;
 using Dalsae.API;
 using Dalsae.Data;
+using Dalsae.Manager;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
+using Dalsae.Twitter.Packets;
 using Dalsae.Web;
-using System.Windows.Controls.Primitives;
+using static Dalsae.DalsaeManager;
+using static Dalsae.DataManager;
+using static Dalsae.FileManager;
+using static Dalsae.TweetManager;
 
 /*작업 순서
  * 잠금 이미지는 팔로우쪽에서 그리드에 한 것처럼 아이디 옆에 자물쇠 가게 하고 이미지 소스도
@@ -81,10 +72,10 @@ using System.Windows.Controls.Primitives;
  */
 namespace Dalsae
 {
-	/// <summary>
-	/// MainWindow.xaml에 대한 상호 작용 논리
-	/// </summary>
-	public partial class MainWindow : Window
+    /// <summary>
+    /// MainWindow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class MainWindow : Window
 	{
 		private Regex UrlMatch = new Regex(@"[(http|ftp|https):\/\/]*[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
 		private int tweetLength = 0;
@@ -776,7 +767,7 @@ namespace Dalsae
 			//	DalsaeInstence.SendMultimedia(parameter, pathGif);
 			//else
 			//	DalsaeInstence.SendTweet(parameter, listBitmapImage.ToArray());
-			ClientSendTweet sendPacket = new Web.ClientSendTweet();
+			ClientSendTweet sendPacket = new ClientSendTweet();
 			if (isAddedGif)
 				sendPacket.SetTweet(parameter, pathGif);
 			else

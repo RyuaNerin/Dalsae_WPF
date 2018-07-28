@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Media;
-using System.Windows.Input;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
 
 namespace Dalsae
 {
-	public class Option:BaseNoty//옵션 추가 시 복사 생성자 유의!!!
+    public class Option:BaseNoty//옵션 추가 시 복사 생성자 유의!!!
 	{
 		public Option() { }
 		public void CheckNullOption()

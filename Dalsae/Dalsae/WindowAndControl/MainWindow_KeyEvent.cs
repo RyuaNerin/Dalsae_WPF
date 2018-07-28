@@ -1,34 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Newtonsoft.Json;
-using static Dalsae.FileManager;
+using Dalsae.Data;
+using Dalsae.Twitter.Objects;
 using static Dalsae.DalsaeManager;
-using static Dalsae.TwitterWeb;
 using static Dalsae.DataManager;
 using static Dalsae.TweetManager;
-using System.Text.RegularExpressions;
-using Dalsae.WindowAndControl;
-using System.Threading;
-using Dalsae.Template;
-using Dalsae.Data;
-using System.Collections.Concurrent;
 
 namespace Dalsae
 {
-	public partial class MainWindow : Window
+    public partial class MainWindow : Window
 	{
 		private void mainWindow_PreviewKeyDown(object sender, KeyEventArgs e)
 		{

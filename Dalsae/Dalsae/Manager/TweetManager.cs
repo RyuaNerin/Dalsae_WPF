@@ -1,28 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Media;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using static Dalsae.FileManager;
-using static Dalsae.DalsaeManager;
-using static Dalsae.TwitterWeb;
-using static Dalsae.DataManager;
 using System.Collections.ObjectModel;
-using Dalsae.API;
+using System.Linq;
 using Dalsae.Data;
+using Dalsae.Manager;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
+using static Dalsae.DalsaeManager;
+using static Dalsae.DataManager;
 
 namespace Dalsae
 {
-
-	public class TweetManager
+    public class TweetManager
 	{
 		private const int ConMaxTweet = 1000;
 		//----------------------------------------------------------------------------------------------------
@@ -486,27 +475,4 @@ namespace Dalsae
 			treeDM.Insert(0, dm);
 		}
 	}//class
-
-	public class DirectMessageList : ObservableCollection<ClientDirectMessage>
-	{
-		public DirectMessageList() : base()
-		{
-		}
-	}
-	public class ListFindUser : ObservableCollection<UserSemi>
-	{
-		public ListFindUser() : base() { }
-	}
-
-	public class TweetTree: ObservableCollection<ClientTweet>
-	{
-		public TweetTree() : base() { }
-	}
-
-	public class TweetList : ObservableCollection<ClientTweet>
-	{
-		public TweetList() : base()
-		{
-		}
-	}
 }

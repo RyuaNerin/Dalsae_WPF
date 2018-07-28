@@ -1,33 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Newtonsoft.Json;
-using static Dalsae.FileManager;
-using static Dalsae.DalsaeManager;
-using static Dalsae.TwitterWeb;
-using static Dalsae.DataManager;
-using static Dalsae.TweetManager;
+using Dalsae.Data;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
 using Dalsae.WindowAndControl;
 using Microsoft.Win32;
-using System.Threading;
-using Dalsae.Template;
-using Dalsae.Data;
+using static Dalsae.DalsaeManager;
+using static Dalsae.DataManager;
+using static Dalsae.FileManager;
+using static Dalsae.TweetManager;
 
-namespace Dalsae	
+namespace Dalsae
 {
-	public partial class MainWindow : Window
+    public partial class MainWindow : Window
 	{
 		//최초 로딩 시
 		private void Dalsae_Loded(object sender, RoutedEventArgs e)

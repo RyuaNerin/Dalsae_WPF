@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Media;
-using SharpRaven;
-using SharpRaven.Data;
+using Dalsae.Twitter.Objects;
 using static Dalsae.TweetManager;
 
 namespace Dalsae.Template
 {
-	public class MyVirtualizingStackPanel : VirtualizingStackPanel
+    public class MyVirtualizingStackPanel : VirtualizingStackPanel
 	{
 		/// <summary>
 		/// Publically expose BringIndexIntoView.

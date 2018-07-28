@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using Dalsae.API;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
 using Dalsae.Web;
 
 namespace Dalsae.Manager
 {
-	public class ResponseAgent
+    public class ResponseAgent
 	{
 		private static ResponseAgent _instence;
 		public static ResponseAgent responseInstence { get { if (_instence == null) _instence = new ResponseAgent(); return _instence; } }

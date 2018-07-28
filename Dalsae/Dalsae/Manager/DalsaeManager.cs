@@ -1,32 +1,31 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Media;
-using System.Text;
+using System.Net;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using static Dalsae.FileManager;
-using static Dalsae.DalsaeManager;
-using static Dalsae.TwitterWeb;
-using static Dalsae.DataManager;
-using static Dalsae.TweetManager;
-using static Dalsae.Manager.ResponseAgent;
-using static Dalsae.Manager.APICallAgent;
-using static Dalsae.Web.UserStreaming;
 using System.Windows;
-using System.IO;
+using System.Windows.Media.Imaging;
 using Dalsae.API;
 using Dalsae.Data;
-using System.Windows.Media.Imaging;
+using Dalsae.Template;
+using Dalsae.Twitter.Objects;
+using Dalsae.Twitter.Packets;
 using Newtonsoft.Json;
-using Dalsae.Web;
-using System.Text.RegularExpressions;
-using System.Net;
-using System.Collections.Concurrent;
+using static Dalsae.DataManager;
+using static Dalsae.FileManager;
+using static Dalsae.Manager.APICallAgent;
+using static Dalsae.Manager.ResponseAgent;
+using static Dalsae.TweetManager;
+using static Dalsae.TwitterWeb;
+using static Dalsae.Web.UserStreaming;
 
 namespace Dalsae
 {
-	public partial class DalsaeManager
+    public partial class DalsaeManager
 	{
 		private static DalsaeManager instence;
 		private MainWindow window;
@@ -550,7 +549,7 @@ namespace Dalsae
 		public void RetweetProtect(ClientTweet tweet)
 		{
 			if (tweet == null) return;
-			ClientSendTweet sendPacket = new Web.ClientSendTweet();
+			ClientSendTweet sendPacket = new ClientSendTweet();
 
 			PacketUpdate parameter = new PacketUpdate(true);
 			parameter.status = Generate.ReplaceTextExpend(tweet.originalTweet);
@@ -568,7 +567,7 @@ namespace Dalsae
 
 		private void LoadProtectTweetMedia(ClientTweet tweet, ClientSendTweet sendTweet)
 		{
-			List<ClientMedia> listMedia = new List<Dalsae.ClientMedia>();
+			List<ClientMedia> listMedia = new List<ClientMedia>();
 			for (int i = 0; i < tweet.mediaEntities.media.Count; i++)
 				if (tweet.mediaEntities.media[i].type == "photo")
 					listMedia.Add(tweet.mediaEntities.media[i]);
