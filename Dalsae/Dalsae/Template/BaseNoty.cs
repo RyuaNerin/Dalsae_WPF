@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Dalsae.Template
 {
     public class BaseNoty : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string info)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
-        }
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
     }
 }

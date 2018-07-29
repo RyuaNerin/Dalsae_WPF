@@ -78,7 +78,7 @@ namespace Dalsae.Web
 						while ((json = streamRead.ReadLine()) != null)
 						{
 							if (string.IsNullOrWhiteSpace(json)) continue;
-							ResponseJson(ref json);
+							ResponseJson(json);
 						}
 					}
 				}
@@ -103,7 +103,7 @@ namespace Dalsae.Web
 			}
 		}
 
-		private void ResponseJson(ref string json)
+		private void ResponseJson(string json)
 		{
 			//try
 			//{

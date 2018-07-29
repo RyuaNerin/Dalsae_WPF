@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Dalsae.Twitter.Packets;
 
-namespace Dalsae.Twitter.Objects
+namespace Dalsae.Twitter
 {
     class TwitterRequest
 	{

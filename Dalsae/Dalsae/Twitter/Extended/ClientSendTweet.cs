@@ -2,7 +2,7 @@
 using System.Windows.Media.Imaging;
 using Dalsae.Twitter.Packets;
 
-namespace Dalsae.Twitter.Objects
+namespace Dalsae.Twitter.Extended
 {
     public class ClientSendTweet
 	{

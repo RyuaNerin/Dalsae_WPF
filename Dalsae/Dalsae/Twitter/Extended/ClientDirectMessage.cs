@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Web;
 using Dalsae.Template;
 
-namespace Dalsae.Twitter.Objects
+namespace Dalsae.Twitter.Extended
 {
     //dm용 클래스
     public class ClientDirectMessage

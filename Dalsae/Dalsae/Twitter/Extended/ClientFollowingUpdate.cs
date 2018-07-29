@@ -1,4 +1,4 @@
-﻿namespace Dalsae.Twitter.Objects
+﻿namespace Dalsae.Twitter.Extended
 {
     public class ClientFollowingUpdate
     {

@@ -1,4 +1,4 @@
-﻿namespace Dalsae.Twitter.Objects
+﻿namespace Dalsae.Twitter.Extended
 {
     //팔로 리스트 땡길 때 사용
     public class ClientUsers

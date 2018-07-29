@@ -1,12 +1,10 @@
-﻿namespace Dalsae.Template
+﻿using PropertyChanged;
+
+namespace Dalsae.Template
 {
-    public class BoolFlagNoti : BaseNoty
+    [AddINotifyPropertyChangedInterface]
+    public class BoolFlagNoti
 	{
-		private bool _isOn=false;
-		public bool isOn
-		{
-			get { return _isOn; }
-			set { _isOn = value; OnPropertyChanged("isOn"); }
-		}
+		public bool isOn { get; set; }
 	}
 }

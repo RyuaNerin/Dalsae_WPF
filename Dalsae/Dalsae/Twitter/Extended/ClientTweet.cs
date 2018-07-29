@@ -5,14 +5,24 @@ using System.Web;
 using Dalsae.Template;
 using static Dalsae.DataManager;
 
-namespace Dalsae.Twitter.Objects
+namespace Dalsae.Twitter.Extended
 {
     public class ClientTweet : BaseNoty
-	{
-		//--------------------------------------------------------------------------------
-		//-------------------------외부 참조용 변수-------------------------------------
-		//--------------------------------------------------------------------------------
-		[Newtonsoft.Json.JsonIgnore]
+    {
+
+
+
+
+
+
+
+
+
+
+        //--------------------------------------------------------------------------------
+        //-------------------------외부 참조용 변수-------------------------------------
+        //--------------------------------------------------------------------------------
+        [Newtonsoft.Json.JsonIgnore]
 		public UIProperty uiProperty { get; set; } = new UIProperty();
 		[Newtonsoft.Json.JsonIgnore]
 		public ClientTweet originalTweet { get; private set; }
@@ -67,33 +77,6 @@ namespace Dalsae.Twitter.Objects
 		public List<ClientURL> listUrl { get; private set; } = new List<ClientURL>();
 		public HashSet<string> hashMention { get; private set; } = new HashSet<string>();
 
-		public string full_text { get { return _text; } set { _text = HttpUtility.HtmlDecode(value); } }//API땡기면 full_text가 옴
-		public string text { get { return _text; } set { _text = HttpUtility.HtmlDecode(value); } }//스트리밍이면 text로 와서 이렇게 사용
-		public User user { get; set; }//트윗 쓴 사람 정보, 리트윗일 경우 리트윗 정보에 원 트윗 user정보 있음
-		public ClientTweet retweeted_status { get; set; }
-		public ClientEntities entities { get; set; }
-		public ClientEntities extended_entities { get; set; }//이미지가 여러장일 경우 사용됨
-		public string in_reply_to_status_id_str { get; set; }
-		public string quoted_status_id_str { get; set; }//인용 리트윗 트윗 id
-		public object created_at { get { return _dateTime; } set { SetDateTime(value); } }
-		public long id { get; set; }//트윗 id
-		public bool truncated { get; set; }//140자 넘는 경우 알려주는 거
-		public ClientExtendedTweet extended_tweet { get; set; }
-		public string source { get { return _source; } set { SetSource(value); } }
-		public int retweet_count { get; set; }//리트윗 카운트
-		public int favorite_count { get; set; }//별 카운트
-		private bool _favorited;
-		public bool favorited//별박았는지
-		{
-			get { return _favorited; }
-			set { _favorited = value; OnPropertyChanged("favorited"); }
-		}
-		private bool _retweeted = false;
-		public bool retweeted//리트윗 했는지
-		{
-			get { return _retweeted; }
-			set { _retweeted = value; OnPropertyChanged("retweeted"); }
-		}
 
 		private bool isExtendTweet = false;
 		public DateTime dateTime { get { return _dateTime; } }
