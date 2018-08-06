@@ -1,16 +1,18 @@
-﻿namespace Dalpi.Params
+﻿using Dalpi.Objects;
+
+namespace Dalpi.Api
 {
-    public static partial class Statuses
+    public static partial class statuses
     {
-        public static partial class Retweets
+        public static partial class retweeters
         {
             /// <summary>
             /// https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/get-statuses-retweeters-ids
             /// </summary>
-            public class Ids : BaseParam<IdCollection>
+            public class ids : BaseApi<IdCollection>
             {
-                public Id()
-                    : base("GET", "https://api.twitter.com/1.1/statuses/retweets/{id}.json")
+                public ids()
+                    : base("GET", "https://api.twitter.com/1.1/statuses/retweeters/ids.json")
                 { }
 
                 [IsArgument]

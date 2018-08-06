@@ -5,7 +5,7 @@
         /// <summary>
         /// https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/get-statuses-lookup
         /// </summary>
-        public class lookup : BaseParam<(string token, string secret)>
+        public class lookup : BaseApi<(string token, string secret)>
         {
             public lookup()
                 : base("GET", "https://api.twitter.com/1.1/statuses/lookup.json")

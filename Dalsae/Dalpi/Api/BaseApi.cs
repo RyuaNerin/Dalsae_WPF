@@ -14,9 +14,9 @@ namespace Dalpi.Api
     {
     }
 
-    public abstract class BaseParam<T>
+    public abstract class BaseApi<T>
     {
-        internal BaseParam(string method, string url, bool autoReqeust = true)
+        internal BaseApi(string method, string url, bool autoReqeust = true)
         {
             this.m_method = method;
             this.m_url = url;

@@ -2,7 +2,7 @@ namespace Dalpi.Api
 {
     public static class oauth
     {
-        public class request_token : BaseParam<(string token, string secret)>
+        public class request_token : BaseApi<(string token, string secret)>
         {
             public request_token()
                 : base("POST", "https://api.twitter.com/oauth/request_token")
